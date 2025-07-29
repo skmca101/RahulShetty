@@ -30,7 +30,7 @@ describe("Check and Verify HomePage Functionality", ()=>{
 	})
 	it("check and verify the footer and its Text",()=>{
 		pomEle.Footer();
-		
+	
 	})
 	it("check and verify the search option in top header page",()=>{
 		

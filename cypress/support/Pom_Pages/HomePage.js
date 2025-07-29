@@ -74,7 +74,7 @@ class HomePage
 			let qty = $products.text();
 			cy.log("Added Products in cart are : " +qty);
 		})
-		
+	
 	}
 	Footer()
 	{
