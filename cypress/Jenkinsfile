@@ -1,0 +1,45 @@
+pipeline {
+  agent any
+
+  tools {
+    nodejs 'Node18'   // This name must match the one from Global Tool Config
+  }
+
+  environment {
+    CI = 'true'
+  }
+
+  stages {
+    stage('Checkout Code') {
+      steps {
+        git 'https://github.com/skmca101/RahulShetty.git'
+      }
+    }
+
+    stage('Install Dependencies') {
+      steps {
+        sh 'npm ci || npm install'  // fallback to npm install if ci fails
+      }
+    }
+
+    stage('Run Cypress Tests') {
+      steps {
+        sh 'npx cypress run'
+      }
+    }
+
+    // Optional: Add report generation step (Mochawesome or Allure)
+  }
+
+  post {
+    always {
+      echo 'Pipeline execution finished.'
+    }
+    success {
+      echo 'Tests passed!'
+    }
+    failure {
+      echo 'Tests failed!'
+    }
+  }
+}
