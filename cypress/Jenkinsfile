@@ -27,7 +27,7 @@ pipeline {
         sh 'npx cypress run'
       }
     }
-
+// how to add the jenki filre testing purpose
     // Optional: Add report generation step (Mochawesome or Allure)
   }
 
