@@ -24,7 +24,7 @@ pipeline {
 
     stage('Run Cypress Tests') {
       steps {
-        bat 'npx cypress run'
+        bat 'npm run CyTest --browser chrome --headless'
       }
     }
 // how to add the jenki filre testing purpose
