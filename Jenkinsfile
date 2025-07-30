@@ -18,13 +18,13 @@ pipeline {
 
     stage('Install Dependencies') {
       steps {
-        sh 'npm ci || npm install'  // fallback to npm install if ci fails
+        bat 'npm ci || npm install'  // fallback to npm install if ci fails
       }
     }
 
     stage('Run Cypress Tests') {
       steps {
-        sh 'npx cypress run'
+        bat 'npx cypress run'
       }
     }
 // how to add the jenki filre testing purpose
